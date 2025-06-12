@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saksham: Voices of Bharat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="container header-content" role="banner">
+    <div class="logo" aria-label="Saksham Voices of Bharat logo">Saksham</div>
+    <nav role="navigation" aria-label="Primary navigation">
+      <a href="#features" tabindex="0">Features</a>
+      <a href="#motivation" tabindex="0">Why Saksham?</a>
+      <a href="#login" tabindex="0">Login</a>
+    </nav>
+    <button class="login-button" id="btnLoginScroll">Login</button>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero" aria-label="Main introduction and tagline">
+    <h1 tabindex="0">Being different shouldn’t mean being alone.</h1>
+    <p tabindex="0">Join Saksham: Voices of Bharat — a personalized, AI-powered, community-driven platform empowering specially-abled individuals with accessible learning, mentorship, and community connection in local languages.</p>
+    <div class="cta-buttons">
+      <button class="btn-primary" id="btnGetStarted" tabindex="0">Get Started</button>
+      <button class="btn-secondary" id="btnExploreFeatures" tabindex="0">Explore Features</button>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features container" id="features" aria-labelledby="features-heading">
+    <h2 id="features-heading" tabindex="0" class="section-title">Key Features</h2>
+    <article class="feature-card" tabindex="0" aria-label="Login system for multiple user types with profiles">
+      <span class="material-icons feature-icon" aria-hidden="true">login</span>
+      <h3 class="feature-title">Inclusive Login System</h3>
+      <p class="feature-desc">Easy login via email, mobile, or Google for students, parents, mentors, doctors, and volunteers with customized profiles.</p>
+    </article>
+    <article class="feature-card" tabindex="0" aria-label="Personalized accessible learning dashboard with audio and quizzes">
+      <span class="material-icons feature-icon" aria-hidden="true">dashboard</span>
+      <h3 class="feature-title">Personalized Learning Dashboard</h3>
+      <p class="feature-desc">Accessible content in audio, visual, and simplified formats with NCERT-aligned lessons and voice quizzes.</p>
+    </article>
+    <article class="feature-card" tabindex="0" aria-label="Community for sharing stories including audio and video">
+      <span class="material-icons feature-icon" aria-hidden="true">record_voice_over</span>
+      <h3 class="feature-title">Suno Meri Kahani</h3>
+      <p class="feature-desc">Share or listen to stories via text, audio, or video. Connect and interact with others facing similar challenges.</p>
+    </article>
+    <article class="feature-card" tabindex="0" aria-label="AI powered chatbot with voice and text input">
+      <span class="material-icons feature-icon" aria-hidden="true">smart_toy</span>
+      <h3 class="feature-title">AI Chatbot Helper</h3>
+      <p class="feature-desc">Ask daily life questions in your language, get answers with voice &amp; text input powered by GPT and government data.</p>
+    </article>
+    <article class="feature-card" tabindex="0" aria-label="Mentor matching system with calls and AI recommendations">
+      <span class="material-icons feature-icon" aria-hidden="true">people</span>
+      <h3 class="feature-title">Mentor Match System</h3>
+      <p class="feature-desc">Connect with verified mentors including achievers with disabilities. Schedule calls and Q&amp;A sessions.</p>
+    </article>
+    <article class="feature-card" tabindex="0" aria-label="Problem help wall for anonymous and public discussions">
+      <span class="material-icons feature-icon" aria-hidden="true">forum</span>
+      <h3 class="feature-title">Problem / Help Wall</h3>
+      <p class="feature-desc">Discuss personal struggles anonymously or publicly and receive community, AI, and mentor support.</p>
+    </article>
+  </section>
+
+  <!-- Motivation Section -->
+  <section class="motivation" id="motivation" aria-label="Motivational impact message">
+    <h2 tabindex="0">From Silence to Strength</h2>
+    <p tabindex="0">Saksham empowers millions by breaking isolation and building confidence through education, mentorship, and community support – all in local languages and accessible formats. Together, we celebrate the strength and success of specially-abled individuals across Bharat.</p>
+    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ccb28184-40e2-4bc1-873b-4876aa9137f6.png" alt="Illustration showing diverse specially-abled individuals smiling and standing in a supportive circle representing community strength" />
+  </section>
+
+  <!-- Login Section -->
+  <section class="login" id="login" aria-label="User login form">
+    <div class="container">
+      <h3 tabindex="0">Login to Saksham</h3>
+      <form aria-describedby="login-instructions" id="loginForm" novalidate>
+        <p id="login-instructions" class="sr-only">You can login using your email or mobile number or by Google account.</p>
+        <div>
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+        </div>
+        <div>
+          <label for="mobile">Mobile number</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="+91 98765 43210" pattern="[\d\s\+\-]+" autocomplete="tel" />
+        </div>
+        <div class="login-actions">
+          <button type="submit">Login</button>
+        </div>
+        <div class="login-or">or</div>
+        <div class="social-login" role="group" aria-label="Social login options">
+          <button type="button" class="social-btn" aria-label="Login with Google" title="Login with Google">
+            <span class="material-icons">google</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer role="contentinfo">
+  &copy; 2024 Saksham: Voices of Bharat. All rights reserved.
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
