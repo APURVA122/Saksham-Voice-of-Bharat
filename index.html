@@ -1,114 +1,819 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Saksham: Voices of Bharat</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saksham: Voices of Bharat</title>
+       <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <span>Saksham</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="showSection('home')">मुख्य पृष्ठ</a></li>
+                <li><a href="#stories" onclick="showSection('stories')">कहानियाँ</a></li>
+                <li><a href="#mentors" onclick="showSection('mentors')">मेंटर्स</a></li>
+                <li><a href="#learn" onclick="showSection('learn')">सीखें</a></li>
+                <li><a href="#help" onclick="showSection('help')">सहायता</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button class="btn btn-secondary" onclick="showLogin()">लॉग इन</button>
+                <button class="btn btn-primary" onclick="showSignup()">साइन अप</button>
+            </div>
+        </nav>
+    </header>
 
-<header>
-  <div class="container header-content" role="banner">
-    <div class="logo" aria-label="Saksham Voices of Bharat logo">Saksham</div>
-    <nav role="navigation" aria-label="Primary navigation">
-      <a href="#features" tabindex="0">Features</a>
-      <a href="#motivation" tabindex="0">Why Saksham?</a>
-      <a href="#login" tabindex="0">Login</a>
-    </nav>
-    <button class="login-button" id="btnLoginScroll">Login</button>
-  </div>
-</header>
+    <main class="container">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>🌟 Saksham: Voices of Bharat</h1>
+                    <p class="hero-subtitle">"अलग होने का मतलब अकेला होना नहीं है"</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">करोड़ विशेष व्यक्ति</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">22</span>
+                            <span class="stat-label">भाषाएं</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">सफलता की कहानियाँ</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="showSignup()" style="font-size: 1.1rem; padding: 1rem 2rem; margin-top: 1rem;">
+                        🚀 आज ही शुरू करें
+                    </button>
+                </div>
+            </div>
 
-<main>
-  <!-- Hero Section -->
-  <section class="hero" aria-label="Main introduction and tagline">
-    <h1 tabindex="0">Being different shouldn’t mean being alone.</h1>
-    <p tabindex="0">Join Saksham: Voices of Bharat — a personalized, AI-powered, community-driven platform empowering specially-abled individuals with accessible learning, mentorship, and community connection in local languages.</p>
-    <div class="cta-buttons">
-      <button class="btn-primary" id="btnGetStarted" tabindex="0">Get Started</button>
-      <button class="btn-secondary" id="btnExploreFeatures" tabindex="0">Explore Features</button>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><span class="feature-icon">🎓</span>व्यक्तिगत शिक्षा</h3>
+                    <p>NCERT पाठ्यक्रम, ऑडियो लेक्चर्स और सरल भाषा में समझाए गए विषय। अपनी गति से सीखें।</p>
+                    <button class="btn btn-primary" onclick="showSection('learn')">शुरू करें</button>
+                </div>
+
+                <div class="feature-card">
+                    <h3><span class="feature-icon">🤖</span>AI सहायक</h3>
+                    <p>"मुझे मुफ्त हियरिंग एड कैसे मिलेगा?" - आपके सभी सवालों के जवाब हिंदी में।</p>
+                    <button class="btn btn-primary" onclick="toggleChatbot()">चैट करें</button>
+                </div>
+
+                <div class="feature-card">
+                    <h3><span class="feature-icon">👥</span>मेंटर कनेक्शन</h3>
+                    <p>सफल व्यक्तियों से जुड़ें जिन्होंने आपकी तरह की चुनौतियों को पार किया है।</p>
+                    <button class="btn btn-primary" onclick="showSection('mentors')">मेंटर्स देखें</button>
+                </div>
+
+                <div class="feature-card">
+                    <h3><span class="feature-icon">💬</span>सुनो मेरी कहानी</h3>
+                    <p>अपनी कहानी साझा करें या दूसरों की प्रेरणादायक कहानियाँ सुनें।</p>
+                    <button class="btn btn-primary" onclick="showSection('stories')">कहानियाँ देखें</button>
+                </div>
+
+                <div class="feature-card">
+                    <h3><span class="feature-icon">🆘</span>सहायता दीवार</h3>
+                    <p>समस्या साझा करें और समुदाय से मदद पाएं। आप अकेले नहीं हैं।</p>
+                    <button class="btn btn-primary" onclick="showSection('help')">मदद मांगें</button>
+                </div>
+
+                <div class="feature-card">
+                    <h3><span class="feature-icon">🌍</span>भारतीय भाषाएं</h3>
+                    <p>हिंदी, बंगाली, तमिल, तेलुगु और 18+ भाषाओं में उपलब्ध।</p>
+                    <button class="btn btn-primary">भाषा चुनें</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard (Hidden initially) -->
+        <section id="dashboard" class="dashboard">
+            <div class="dashboard-header">
+                <h2 class="welcome-msg">🙏 नमस्ते, <span id="userName">मित्र</span>!</h2>
+                <button class="btn btn-secondary" onclick="logout()">लॉग आउट</button>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><span class="feature-icon">📚</span>आज का लेसन</h3>
+                    <p>गणित: अध्याय 5 - बीजगणित (ऑडियो उपलब्ध)</p>
+                    <button class="btn btn-primary">शुरू करें</button>
+                </div>
+
+                <div class="feature-card">
+                    <h3><span class="feature-icon">🎯</span>आपकी प्रगति</h3>
+                    <p>इस सप्ताह: 5 लेसन पूरे, 3 क्विज़ दिए</p>
+                    <div style="background: #e5e7eb; height: 10px; border-radius: 5px; margin: 10px 0;">
+                        <div style="background: var(--success-green); height: 100%; width: 70%; border-radius: 5px;"></div>
+                    </div>
+                    <button class="btn btn-primary">विस्तार देखें</button>
+                </div>
+
+                <div class="feature-card">
+                    <h3><span class="feature-icon">💌</span>नए संदेश</h3>
+                    <p>राज सर ने आपके सवाल का जवाब दिया है</p>
+                    <button class="btn btn-primary">पढ़ें</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stories Section -->
+        <section id="stories" class="section" style="display: none;">
+            <h2 style="text-align: center; margin: 2rem 0; color: var(--primary-blue);">🎤 सुनो मेरी कहानी</h2>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <button class="btn btn-primary" onclick="showAddStory()">+ अपनी कहानी साझा करें</button>
+            </div>
+
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-header">
+                        <div class="story-avatar">प्र</div>
+                        <div class="story-meta">
+                            <div class="story-author">प्रिया शर्मा</div>
+                            <div class="story-location">दिल्ली</div>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        "10 साल की उम्र में दृष्टि खोने के बाद मैंने सोचा था कि मेरा सपना डॉक्टर बनने का अधूरा रह जाएगा। लेकिन Saksham के माध्यम से मिली मदद और प्रेरणा से आज मैं AIIMS में पढ़ रही हूं।"
+                    </div>
+                    <div class="story-actions">
+                        <button class="like-btn">❤️ 127</button>
+                        <button class="like-btn">💬 23</button>
+                        <button class="like-btn">🔊 सुनें</button>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-header">
+                        <div class="story-avatar">र</div>
+                        <div class="story-meta">
+                            <div class="story-author">राहुल वर्मा</div>
+                            <div class="story-location">मुंबई</div>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        "व्हीलचेयर पर होने से कभी नहीं रुका। Saksham के मेंटर्स की मदद से आज मैं एक सफल सॉफ्टवेयर इंजीनियर हूं और अपनी खुद की कंपनी चलाता हूं।"
+                    </div>
+                    <div class="story-actions">
+                        <button class="like-btn">❤️ 89</button>
+                        <button class="like-btn">💬 15</button>
+                        <button class="like-btn">🔊 सुनें</button>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-header">
+                        <div class="story-avatar">स</div>
+                        <div class="story-meta">
+                            <div class="story-author">सुमित्रा देवी</div>
+                            <div class="story-location">पटना</div>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        "बोलने में कठिनाई के कारण मुझे लगता था कि मैं कभी टीचर नहीं बन सकूंगी। लेकिन यहां मिली तकनीक और समुदाय के साथ, आज मैं 200+ बच्चों को पढ़ाती हूं।"
+                    </div>
+                    <div class="story-actions">
+                        <button class="like-btn">❤️ 156</button>
+                        <button class="like-btn">💬 31</button>
+                        <button class="like-btn">🔊 सुनें</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Other sections would be implemented similarly -->
+        <section id="mentors" class="section" style="display: none;">
+            <h2 style="text-align: center; margin: 2rem 0; color: var(--primary-blue);">🎯 आपके मेंटर्स</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><span class="feature-icon">👨‍💼</span>डॉ. अमित कुमार</h3>
+                    <p>IAS अधिकारी | दृष्टिबाधित | सरकारी योजनाओं के विशेषज्ञ</p>
+                    <button class="btn btn-primary">मीटिंग बुक करें</button>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="feature-icon">👩‍💻</span>सुश्री प्रीति पटेल</h3>
+                    <p>Software Engineer | व्हीलचेयर यूज़र | टेक्नोलॉजी मेंटर</p>
+                    <button class="btn btn-primary">मीटिंग बुक करें</button>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="feature-icon">🎨</span>राज कपूर</h3>
+                    <p>Famous Artist | श्रवणबाधित | कला और रचनात्मकता के गुरु</p>
+                    <button class="btn btn-primary">मीटिंग बुक करें</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="learn" class="section" style="display: none;">
+            <h2 style="text-align: center; margin: 2rem 0; color: var(--primary-blue);">📚 व्यक्तिगत शिक्षा</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3><span class="feature-icon">🔢</span>गणित</h3>
+                    <p>कक्षा 6 से 12 तक, ऑडियो लेक्चर्स और ब्रेल सपोर्ट के साथ</p>
+                    <button class="btn btn-primary">शुरू करें</button>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="feature-icon">🔬</span>विज्ञान</h3>
+                    <p>भौतिक, रसायन, जीव विज्ञान - इंटरैक्टिव मॉडल्स के साथ</p>
+                    <button class="btn btn-primary">शुरू करें</button>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="feature-icon">🌍</span>सामाजिक विज्ञान</h3>
+                    <p>इतिहास, भूगोल, राजनीति विज्ञान - ऑडियो स्टोरीज़ के साथ</p>
+                    <button class="btn btn-primary">शुरू करें</button>
+                </div>
+                <div class="feature-card">
+                    <h3><span class="feature-icon">💼</span>कैरियर गाइडेंस</h3>
+                    <p>सरकारी नौकरी, प्राइवेट जॉब्स, और स्किल डेवलपमेंट</p>
+                    <button class="btn btn-primary">शुरू करें</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="help" class="section" style="display: none;">
+            <h2 style="text-align: center; margin: 2rem 0; color: var(--primary-blue);">🆘 सहायता दीवार</h2>
+            
+            <div style="text-align: center; margin: 2rem 0;">
+                <button class="btn btn-primary" onclick="showAddHelp()">+ मदद मांगें</button>
+            </div>
+
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-header">
+                        <div class="story-avatar">अ</div>
+                        <div class="story-meta">
+                            <div class="story-author">अनाम</div>
+                            <div class="story-location">जयपुर</div>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <strong>समस्या:</strong> "मुझे डिप्रेशन हो रहा है क्योंकि स्कूल में बच्चे मुझसे बात नहीं करते। क्या करूं?"
+                    </div>
+                    <div class="story-actions">
+                        <button class="like-btn">💭 12 जवाब</button>
+                        <button class="like-btn">🤝 मदद करें</button>
+                    </div>
+                </div>
+
+                <div class="story-card">
+                    <div class="story-header">
+                        <div class="story-avatar">म</div>
+                        <div class="story-meta">
+                            <div class="story-author">मोहन</div>
+                            <div class="story-location">चेन्नई</div>
+                        </div>
+                    </div>
+                    <div class="story-content">
+                        <strong>समस्या:</strong> "मुझे कंप्यूटर सीखना है लेकिन आंखें नहीं हैं। कोई मदद कर सकता है?"
+                    </div>
+                    <div class="story-actions">
+                        <button class="like-btn">💭 8 जवाब</button>
+                        <button class="like-btn">🤝 मदद करें</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;">🔐 लॉग इन करें</h2>
+            
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginEmail">ईमेल / मोबाइल</label>
+                    <input type="text" id="loginEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword">पासवर्ड</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin: 1rem 0;">लॉग इन करें</button>
+            </form>
+            
+            <div style="text-align: center; margin: 1rem 0;">
+                <p>या</p>
+                <button class="btn btn-secondary" style="width: 100%;">🔑 Google से लॉग इन करें</button>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- Features Section -->
-  <section class="features container" id="features" aria-labelledby="features-heading">
-    <h2 id="features-heading" tabindex="0" class="section-title">Key Features</h2>
-    <article class="feature-card" tabindex="0" aria-label="Login system for multiple user types with profiles">
-      <span class="material-icons feature-icon" aria-hidden="true">login</span>
-      <h3 class="feature-title">Inclusive Login System</h3>
-      <p class="feature-desc">Easy login via email, mobile, or Google for students, parents, mentors, doctors, and volunteers with customized profiles.</p>
-    </article>
-    <article class="feature-card" tabindex="0" aria-label="Personalized accessible learning dashboard with audio and quizzes">
-      <span class="material-icons feature-icon" aria-hidden="true">dashboard</span>
-      <h3 class="feature-title">Personalized Learning Dashboard</h3>
-      <p class="feature-desc">Accessible content in audio, visual, and simplified formats with NCERT-aligned lessons and voice quizzes.</p>
-    </article>
-    <article class="feature-card" tabindex="0" aria-label="Community for sharing stories including audio and video">
-      <span class="material-icons feature-icon" aria-hidden="true">record_voice_over</span>
-      <h3 class="feature-title">Suno Meri Kahani</h3>
-      <p class="feature-desc">Share or listen to stories via text, audio, or video. Connect and interact with others facing similar challenges.</p>
-    </article>
-    <article class="feature-card" tabindex="0" aria-label="AI powered chatbot with voice and text input">
-      <span class="material-icons feature-icon" aria-hidden="true">smart_toy</span>
-      <h3 class="feature-title">AI Chatbot Helper</h3>
-      <p class="feature-desc">Ask daily life questions in your language, get answers with voice &amp; text input powered by GPT and government data.</p>
-    </article>
-    <article class="feature-card" tabindex="0" aria-label="Mentor matching system with calls and AI recommendations">
-      <span class="material-icons feature-icon" aria-hidden="true">people</span>
-      <h3 class="feature-title">Mentor Match System</h3>
-      <p class="feature-desc">Connect with verified mentors including achievers with disabilities. Schedule calls and Q&amp;A sessions.</p>
-    </article>
-    <article class="feature-card" tabindex="0" aria-label="Problem help wall for anonymous and public discussions">
-      <span class="material-icons feature-icon" aria-hidden="true">forum</span>
-      <h3 class="feature-title">Problem / Help Wall</h3>
-      <p class="feature-desc">Discuss personal struggles anonymously or publicly and receive community, AI, and mentor support.</p>
-    </article>
-  </section>
-
-  <!-- Motivation Section -->
-  <section class="motivation" id="motivation" aria-label="Motivational impact message">
-    <h2 tabindex="0">From Silence to Strength</h2>
-    <p tabindex="0">Saksham empowers millions by breaking isolation and building confidence through education, mentorship, and community support – all in local languages and accessible formats. Together, we celebrate the strength and success of specially-abled individuals across Bharat.</p>
-    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ccb28184-40e2-4bc1-873b-4876aa9137f6.png" alt="Illustration showing diverse specially-abled individuals smiling and standing in a supportive circle representing community strength" />
-  </section>
-
-  <!-- Login Section -->
-  <section class="login" id="login" aria-label="User login form">
-    <div class="container">
-      <h3 tabindex="0">Login to Saksham</h3>
-      <form aria-describedby="login-instructions" id="loginForm" novalidate>
-        <p id="login-instructions" class="sr-only">You can login using your email or mobile number or by Google account.</p>
-        <div>
-          <label for="email">Email address</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;">✨ साइन अप करें</h2>
+            
+            <form onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label for="signupName">पूरा नाम</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupEmail">ईमेल</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="signupPhone">मोबाइल नंबर</label>
+                    <input type="tel" id="signupPhone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="userType">आप कौन हैं?</label>
+                    <select id="userType" required>
+                        <option value="">चुनें</option>
+                        <option value="student">छात्र/छात्रा</option>
+                        <option value="parent">माता-पिता</option>
+                        <option value="mentor">मेंटर</option>
+                        <option value="volunteer">स्वयंसेवक</option>
+                        <option value="doctor">डॉक्टर</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="preferredLanguage">पसंदीदा भाषा</label>
+                    <select id="preferredLanguage" required>
+                        <option value="hindi">हिंदी</option>
+                        <option value="english">English</option>
+                        <option value="bengali">বাংলা</option>
+                        <option value="tamil">தமிழ்</option>
+                        <option value="telugu">తెలుగు</option>
+                        <option value="marathi">मराठी</option>
+                        <option value="gujarati">ગુજરાતી</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="disabilityType">विकलांगता का प्रकार (वैकल्पिक)</label>
+                    <select id="disabilityType">
+                        <option value="">चुनें</option>
+                        <option value="visual">दृष्टिबाधित</option>
+                        <option value="hearing">श्रवणबाधित</option>
+                        <option value="physical">शारीरिक विकलांगता</option>
+                        <option value="intellectual">बौद्धिक विकलांगता</option>
+                        <option value="multiple">बहुविकलांगता</option>
+                        <option value="other">अन्य</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin: 1rem 0;">साइन अप करें</button>
+            </form>
         </div>
-        <div>
-          <label for="mobile">Mobile number</label>
-          <input type="tel" id="mobile" name="mobile" placeholder="+91 98765 43210" pattern="[\d\s\+\-]+" autocomplete="tel" />
-        </div>
-        <div class="login-actions">
-          <button type="submit">Login</button>
-        </div>
-        <div class="login-or">or</div>
-        <div class="social-login" role="group" aria-label="Social login options">
-          <button type="button" class="social-btn" aria-label="Login with Google" title="Login with Google">
-            <span class="material-icons">google</span>
-          </button>
-        </div>
-      </form>
     </div>
-  </section>
 
-</main>
+    <!-- Add Story Modal -->
+    <div id="addStoryModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;">📝 अपनी कहानी साझा करें</h2>
+            
+            <form onsubmit="handleAddStory(event)">
+                <div class="form-group">
+                    <label for="storyTitle">कहानी का शीर्षक</label>
+                    <input type="text" id="storyTitle" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="storyContent">आपकी कहानी</label>
+                    <textarea id="storyContent" rows="6" placeholder="अपनी प्रेरणादायक कहानी साझा करें..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="storyTags">टैग्स (अपनी चुनौती)</label>
+                    <input type="text" id="storyTags" placeholder="जैसे: दृष्टिहीनता, स्कूल में बुलिंग, आदि">
+                </div>
+                
+                <div class="form-group">
+                    <label>कहानी का प्रकार</label>
+                    <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                        <label style="display: flex; align-items: center; gap: 5px;">
+                            <input type="radio" name="storyType" value="text" checked>
+                            📝 लिखित
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 5px;">
+                            <input type="radio" name="storyType" value="audio">
+                            🎤 ऑडियो
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 5px;">
+                            <input type="radio" name="storyType" value="video">
+                            📹 वीडियो
+                        </label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin: 1rem 0;">कहानी प्रकाशित करें</button>
+            </form>
+        </div>
+    </div>
 
-<footer role="contentinfo">
-  &copy; 2024 Saksham: Voices of Bharat. All rights reserved.
-</footer>
+    <!-- Add Help Modal -->
+    <div id="addHelpModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2 style="text-align: center; color: var(--primary-blue); margin-bottom: 2rem;">🆘 मदद मांगें</h2>
+            
+            <form onsubmit="handleAddHelp(event)">
+                <div class="form-group">
+                    <label for="helpTitle">समस्या का शीर्षक</label>
+                    <input type="text" id="helpTitle" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="helpContent">समस्या का विवरण</label>
+                    <textarea id="helpContent" rows="5" placeholder="अपनी समस्या विस्तार से बताएं..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="helpCategory">श्रेणी</label>
+                    <select id="helpCategory" required>
+                        <option value="">चुनें</option>
+                        <option value="education">शिक्षा</option>
+                        <option value="career">करियर</option>
+                        <option value="health">स्वास्थ्य</option>
+                        <option value="technology">तकनीक</option>
+                        <option value="emotional">भावनात्मक सहारा</option>
+                        <option value="financial">आर्थिक सहायता</option>
+                        <option value="other">अन्य</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label style="display: flex; align-items: center; gap: 10px;">
+                        <input type="checkbox" id="anonymous">
+                        गुमनाम रूप से पोस्ट करें
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin: 1rem 0;">मदद मांगें</button>
+            </form>
+        </div>
+    </div>
 
-<script src="script.js"></script>
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-toggle" onclick="toggleChatbot()" aria-label="AI सहायक से बात करें">
+            🤖
+        </button>
+        
+        <div id="chatbotWindow" class="chatbot-window">
+            <div class="chatbot-header">
+                <span>🤖</span>
+                <div>
+                    <div style="font-weight: bold;">साक्षम AI सहायक</div>
+                    <div style="font-size: 0.8rem; opacity: 0.8;">आपकी मदद के लिए यहां हूं</div>
+                </div>
+            </div>
+            
+            <div class="chatbot-messages" id="chatMessages">
+                <div class="message bot">
+                    नमस्ते! 🙏 मैं साक्षम AI सहायक हूं। आप मुझसे कुछ भी पूछ सकते हैं:
+                    <br><br>
+                    • सरकारी योजनाओं के बारे में
+                    <br>• शिक्षा और करियर गाइडेंस
+                    <br>• तकनीकी सहायता
+                    <br>• भावनात्मक सहारा
+                    <br><br>
+                    कैसे मदद कर सकता हूं? 😊
+                </div>
+            </div>
+            
+            <div class="chatbot-input">
+                <input type="text" id="chatInput" placeholder="अपना सवाल यहां लिखें..." onkeypress="handleChatKeypress(event)">
+                <button onclick="sendMessage()" aria-label="संदेश भेजें">भेजें</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global variables
+        let currentUser = null;
+        let chatbotOpen = false;
+
+        // Sample chatbot responses
+        const chatbotResponses = {
+            'hearing aid': 'हियरिंग एड के लिए आप निकटतम जिला अस्पताल में ADIP योजना के तहत आवेदन कर सकते हैं। यह बिल्कुल मुफ्त है। क्या आपको आवेदन प्रक्रिया के बारे में जानना है?',
+            'scholarship': '🎓 विकलांग छात्रों के लिए कई स्कॉलरशिप उपलब्ध हैं:\n\n• Post Matric Scholarship\n• Top Class Education\n• UGC Scholarships\n\nकौन सी कक्षा के लिए चाहिए?',
+            'job': '💼 सरकारी नौकरियों में 4% आरक्षण है। कुछ अच्छे विकल्प:\n\n• SSC CGL\n• Banking Exams\n• Railway Jobs\n• State PSC\n\nकिस क्षेत्र में रुचि है?',
+            'depression': '😔 यह समझ सकता हूं कि आप कैसा महसूस कर रहे हैं। आप अकेले नहीं हैं।\n\n• हमारे कम्युनिटी में आपके जैसे लोग हैं\n• मानसिक स्वास्थ्य हेल्पलाइन: 9152987821\n• क्या आप किसी मेंटर से बात करना चाहेंगे?',
+            'computer': '💻 कंप्यूटर सीखने के लिए:\n\n• NVDA (दृष्टिहीनों के लिए)\n• Dragon Software (voice control)\n• हमारे Tech Mentors से जुड़ें\n\nकौन सा सॉफ्टवेयर चाहिए?'
+        };
+
+        // Navigation functions
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show requested section
+            document.getElementById(sectionId).style.display = 'block';
+            
+            // Update URL hash
+            window.location.hash = sectionId;
+        }
+
+        function showLogin() {
+            document.getElementById('loginModal').classList.add('active');
+        }
+
+        function showSignup() {
+            document.getElementById('signupModal').classList.add('active');
+        }
+
+        function showAddStory() {
+            document.getElementById('addStoryModal').classList.add('active');
+        }
+
+        function showAddHelp() {
+            document.getElementById('addHelpModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.classList.remove('active');
+            });
+        }
+
+        // Authentication functions
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            // Simple validation (in real app, this would be server-side)
+            if (email && password) {
+                currentUser = {
+                    name: email.split('@')[0] || email,
+                    email: email,
+                    type: 'student'
+                };
+                
+                // Update UI
+                document.getElementById('userName').textContent = currentUser.name;
+                document.getElementById('home').style.display = 'none';
+                document.getElementById('dashboard').classList.add('active');
+                
+                closeModal();
+                
+                // Show success message
+                showNotification('सफलतापूर्वक लॉग इन हो गए! 🎉', 'success');
+            } else {
+                showNotification('कृपया सभी फील्ड भरें', 'error');
+            }
+        }
+
+        function handleSignup(event) {
+            event.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const phone = document.getElementById('signupPhone').value;
+            const userType = document.getElementById('userType').value;
+            
+            if (name && email && phone && userType) {
+                currentUser = {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    type: userType,
+                    language: document.getElementById('preferredLanguage').value,
+                    disability: document.getElementById('disabilityType').value
+                };
+                
+                // Update UI
+                document.getElementById('userName').textContent = currentUser.name;
+                document.getElementById('home').style.display = 'none';
+                document.getElementById('dashboard').classList.add('active');
+                
+                closeModal();
+                
+                // Show welcome message
+                showNotification(`${name} जी, आपका स्वागत है! 🌟`, 'success');
+            } else {
+                showNotification('कृपया सभी आवश्यक फील्ड भरें', 'error');
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            document.getElementById('dashboard').classList.remove('active');
+            document.getElementById('home').style.display = 'block';
+            showNotification('सफलतापूर्वक लॉग आउट हो गए', 'info');
+        }
+
+        // Story and Help functions
+        function handleAddStory(event) {
+            event.preventDefault();
+            const title = document.getElementById('storyTitle').value;
+            const content = document.getElementById('storyContent').value;
+            
+            if (title && content) {
+                // In a real app, this would be saved to a database
+                showNotification('आपकी कहानी सफलतापूर्वक प्रकाशित हुई! 📖', 'success');
+                closeModal();
+                
+                // Clear form
+                document.getElementById('storyTitle').value = '';
+                document.getElementById('storyContent').value = '';
+                document.getElementById('storyTags').value = '';
+            } else {
+                showNotification('कृपया शीर्षक और कहानी दोनों भरें', 'error');
+            }
+        }
+
+        function handleAddHelp(event) {
+            event.preventDefault();
+            const title = document.getElementById('helpTitle').value;
+            const content = document.getElementById('helpContent').value;
+            const category = document.getElementById('helpCategory').value;
+            
+            if (title && content && category) {
+                showNotification('आपकी मदद की अपील पोस्ट हो गई! 🆘', 'success');
+                closeModal();
+                
+                // Clear form
+                document.getElementById('helpTitle').value = '';
+                document.getElementById('helpContent').value = '';
+                document.getElementById('helpCategory').value = '';
+            } else {
+                showNotification('कृपया सभी आवश्यक फील्ड भरें', 'error');
+            }
+        }
+
+        // Chatbot functions
+        function toggleChatbot() {
+            chatbotOpen = !chatbotOpen;
+            const window = document.getElementById('chatbotWindow');
+            
+            if (chatbotOpen) {
+                window.classList.add('active');
+                document.getElementById('chatInput').focus();
+            } else {
+                window.classList.remove('active');
+            }
+        }
+
+        function handleChatKeypress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (message) {
+                // Add user message
+                addChatMessage(message, 'user');
+                
+                // Clear input
+                input.value = '';
+                
+                // Generate bot response
+                setTimeout(() => {
+                    const response = generateBotResponse(message);
+                    addChatMessage(response, 'bot');
+                }, 1000);
+            }
+        }
+
+        function addChatMessage(message, sender) {
+            const messagesContainer = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+            messageDiv.innerHTML = message;
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        function generateBotResponse(userMessage) {
+            const message = userMessage.toLowerCase();
+            
+            // Check for keywords and return appropriate response
+            for (const [keyword, response] of Object.entries(chatbotResponses)) {
+                if (message.includes(keyword) || message.includes(keyword.replace(' ', ''))) {
+                    return response;
+                }
+            }
+            
+            // Hindi keyword checks
+            if (message.includes('हियरिंग') || message.includes('सुनाई')) {
+                return chatbotResponses['hearing aid'];
+            } else if (message.includes('छात्रवृत्ति') || message.includes('स्कॉलरशिप')) {
+                return chatbotResponses['scholarship'];
+            } else if (message.includes('नौकरी') || message.includes('जॉब')) {
+                return chatbotResponses['job'];
+            } else if (message.includes('उदास') || message.includes('डिप्रेशन')) {
+                return chatbotResponses['depression'];
+            } else if (message.includes('कंप्यूटर') || message.includes('लैपटॉप')) {
+                return chatbotResponses['computer'];
+            }
+            
+            // Default response
+            return `मैं आपकी बात समझ गया। 🤔 आप चाहें तो:\n\n• हमारे मेंटर्स से बात कर सकते हैं\n• कम्युनिटी फोरम पर पोस्ट कर सकते हैं\n• या फिर अपना सवाल अलग तरीके से पूछ सकते हैं\n\nकैसे मदद करूं?`;
+        }
+
+        // Notification function
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 20px;
+                background: ${type === 'success' ? 'var(--success-green)' : type === 'error' ? '#ef4444' : 'var(--primary-blue)'};
+                color: white;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                z-index: 3000;
+                animation: slideIn 0.3s ease;
+                max-width: 300px;
+                font-weight: 500;
+            `;
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle hash navigation
+            const hash = window.location.hash.slice(1);
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            }
+            
+            // Close modals when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target.classList.contains('modal')) {
+                    closeModal();
+                }
+            });
+            
+            // Keyboard accessibility
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeModal();
+                    if (chatbotOpen) {
+                        toggleChatbot();
+                    }
+                }
+            });
+            
+            // Add some sample interactions for demo
+            setTimeout(() => {
+                if (!currentUser) {
+                    showNotification('साक्षम में आपका स्वागत है! 🌟 साइन अप करके शुरू करें।', 'info');
+                }
+            }, 2000);
+        });
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
-
